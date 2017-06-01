@@ -1,0 +1,29 @@
+﻿@model Cre8.Core.Models.Site
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Title</title>
+    @System.Web.Optimization.Styles.Render("~/Content/css/main/bundle")
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        @foreach (var gear in Model.Gears)
+        {
+            <div class="module">@Html.Partial(@gear.ViewPath, @gear)</div>
+        }
+    </main>    
+    <footer>
+
+    </footer>
+</body>
+</html>
